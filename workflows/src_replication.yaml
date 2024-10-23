@@ -1,0 +1,13 @@
+source: MY_MYSQL
+target: LOCAL
+
+# default config options which apply to all streams
+defaults:
+  mode: full-refresh
+  object: file://src/mysql/{stream_table}.parquet
+  target_options:
+    format  : parquet
+    compression : gzip
+
+streams:
+  sampledb.emp:

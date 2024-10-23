@@ -1,0 +1,13 @@
+source: MY_SNOWFLAKE
+target: LOCAL
+
+# default config options which apply to all streams
+defaults:
+  mode: full-refresh
+  object: file://tgt/snowflake/{stream_table}.parquet
+  target_options:
+    format  : parquet
+    compression : gzip
+
+streams:
+  dev_schema.emp_table:
