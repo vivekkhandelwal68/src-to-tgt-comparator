@@ -4,7 +4,7 @@ target: LOCAL
 # default config options which apply to all streams
 defaults:
   mode: full-refresh
-  object: file://src/mysql/{stream_table}.parquet
+  object: file://src/{source_name}/{stream_schema}/{stream_table}/file_{run_timestamp}.parquet
   target_options:
     format  : parquet
     compression : gzip
